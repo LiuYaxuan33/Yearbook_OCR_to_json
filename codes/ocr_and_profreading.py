@@ -17,7 +17,7 @@ DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 MODEL_NAME = "deepseek-chat"
 #这部分的路径改成实际路径
 IMAGE_FOLDER = 'output_images'
-OUTPUT_FILE = './output.json'
+OUTPUT_FILE = 'output/output.json'
 
 client = OpenAI(
     api_key=QWEN_API_KEY,
@@ -112,7 +112,7 @@ def process_image_folder(folder_path, output_file):
                 rewritten_text = deepseek_rewrite(ocr_text)
                 
                 # 写入合并润色文件
-                rewritten_merged_file.write("\n"+rewritten_text + "\n")
+                rewritten_merged_file.write(rewritten_text)
                 
             except Exception as e:
                 print(f"处理 {image_path} 时出错: {str(e)}")
@@ -135,32 +135,18 @@ def deepseek_rewrite(text):
 Perform OCR fusion and text refinement with these priorities:
 
 Chinese Character Recognition:
-Correct the Chinese store names in the input from right to left to those written from left to right. Do not remove the Chinese text.
+Keep the original Chinese characters and do not delete them
 Comprehensive Corrections:
-Resolve character confusions (rn→m, cl→d, 1/i/l differentiation)
-Complete partial words (pple→Apple, micr→micro)
-Restore missing punctuation:
-Sentence-ending marks (./!/?)
-Quotation marks and hyphens
-List formatting (commas/semicolons)
+Resolve character confusions
+Complete partial words
 Fix line-break errors while preserving valid paragraph breaks
-Structural Integrity:
-Maintain original section breaks (detect headers/transitions through formatting patterns)
-Insert paragraph spacing between distinct information blocks (e.g., student profiles)
-Remove pagination artifacts (page numbers/headers/footers)
+Insert paragraph spacing between distinct information blocks (e.g., store profiles)
 Output Requirements:
 Return only the enhanced text
 Preserve all informational elements
-Use standard English formatting
 Never add explanatory comments
-Processing Example:
-[Input] Customer Name: "John_Doe";
-Addr: 123 Oak St...
-
-[Output] Customer Name: "John Doe";
-Address: 123 Oak St...
-
-Provide only the pure polished text without any markdown format (‘’‘, *, etc.) or additional explanations.
+Provide only the pure polished text without any markdown format (‘’‘, *, etc.)
+If the input begins with a store name, leave a line empty at the beginning.
 """
             },
             {
