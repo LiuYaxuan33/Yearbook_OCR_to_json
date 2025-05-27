@@ -8,9 +8,6 @@ import os
 
 load_dotenv()  # 加载.env文件中的环境变量
 
-
-
-
 QWEN_API_KEY = os.getenv("QWEN_API_KEY")
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")  
