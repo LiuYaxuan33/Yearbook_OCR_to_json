@@ -70,6 +70,8 @@ def ocr_with_qwen(image_path):
     )
 
     return completion.choices[0].message.content.strip()
+def is_chinese(char):
+    return '\u4e00' <= char <= '\u9fff'
 
 def process_image_folder(folder_path, output_file):
     image_extensions = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff', '.webp')
@@ -86,34 +88,50 @@ def process_image_folder(folder_path, output_file):
     output_dir = os.path.dirname(output_file)
     os.makedirs(output_dir, exist_ok=True)
     
-    # 新增合并文件路径
     merged_ocr_path = os.path.join(output_dir, "merged_ocr_results.txt")
     merged_rewritten_path = os.path.join(output_dir, "merged_rewritten_results.txt")
-    
 
-    with open(merged_ocr_path, "w", encoding="utf-8") as ocr_merged_file, \
-         open(merged_rewritten_path, "w", encoding="utf-8") as rewritten_merged_file:
-
+    # === 第一阶段：OCR 识别并写入 merged_ocr_results.txt ===
+    with open(merged_ocr_path, "w", encoding="utf-8") as ocr_file:
         for idx, image_path in enumerate(image_files, 1):
             try:
                 image_name = os.path.basename(image_path)
-                print(f"正在处理 ({idx}/{len(image_files)}): {image_name}")
-
-                # OCR处理
-                ocr_text = ocr_with_qwen(image_path)
-                
-                # 写入合并OCR文件
-                ocr_merged_file.write(ocr_text + "\n\n")
-
-                # 文本润色
-                rewritten_text = deepseek_rewrite(ocr_text)
-                
-                # 写入合并润色文件
-                rewritten_merged_file.write(rewritten_text)
-                
+                print(f"[OCR阶段] 正在处理 ({idx}/{len(image_files)}): {image_name}")
+                ocr_text = ocr_with_qwen(image_path).replace("\n\n", "\n")
+                ocr_file.write(f"{ocr_text.strip()}\n")
             except Exception as e:
                 print(f"处理 {image_path} 时出错: {str(e)}")
 
+    # === 第二阶段：分块润色并写入 merged_rewritten_results.txt ===
+    with open(merged_ocr_path, "r", encoding="utf-8") as ocr_file, \
+         open(merged_rewritten_path, "w", encoding="utf-8") as rewritten_file:
+
+        current_block = []
+        current_header = "UNIT:"
+
+        def flush_block():
+            if current_block:
+                raw_text = "\n".join(current_block).strip()
+                if raw_text:
+                    try:
+                        rewritten = deepseek_rewrite(raw_text)
+                        rewritten_file.write(f"{current_header}\n{rewritten}\n\n")
+                    except Exception as e:
+                        print(f"润色失败: {e}")
+                current_block.clear()
+
+        for line in ocr_file:
+            line = line.rstrip("\n")
+            if line.startswith("===") and line.endswith("==="):
+                flush_block()
+                current_header = line
+            elif line and is_chinese(line[0]):
+                flush_block()
+                current_block.append(line)
+            else:
+                current_block.append(line)
+        
+        flush_block()  # 处理最后一个块
 
         
 def deepseek_rewrite(text):

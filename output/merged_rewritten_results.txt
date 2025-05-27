@@ -1,3 +1,4 @@
+UNIT:
 局絲綫昌寶口虹裡  
 Li Hong-kew Pau-chong Chao-sz.kio  
 East Hong-kew Creek  
@@ -7,10 +8,12 @@ J. Appay
 Mme. P. Rey  
 Melle. L. Laplanche  
 Melle. B. Laplanche  
-Melle. P. Laplanche  
+Melle. P. Laplanche
 
-司公船輪奥和  
+UNIT:
+公司船輪奧和  
 Wo-hsing lun-chuen Kung-su  
+
 SHANGHAI STEAMSHIP COMPANY, LIMITED  
 B. A. Clarke & Co., agents  
 
@@ -20,42 +23,60 @@ Nils Møller, agent
 SHERIDAN CONSOLIDATED MINING AND MILLING COMPANY, LIMITED  
 
 BELMONT CONSOLIDATED MINING COMPANY  
-Drysdale, Ringer & Co., secretaries  
+Drysdale, Ringer & Co., secretaries
 
-館書文修 Shiu-bun sho-kwan  
-SHIU BUN SHO KWAN, Chinese Type Foundry, Printers, Manufacturers of Printing Machines, and Stereotypers, 6, Canton Road  
+UNIT:
+館書文修 Shiu-bun sho-kwan
+
+SHIU BUN SHO KWAN, Chinese Type Foundry, Printers, Manufacturers of Printing Machines, and Stereotypers, 6, Canton Road
+
 N. Matsumo, director  
 H. Matsumo, manager  
 J. Sato  
 S. Kamiya  
 T. Nakabayashi  
 H. Ikeda  
-T. Iwata  
+T. Iwata
 
+UNIT:
 發祥 Tseang-fah  
-SHOOKER ABRAHAM & Co., Merchants, 14, Szechuan Road  
+
+SHOOKER ABRAHAM & Co., Merchants, 14,  
+Szechuan Road  
+
 I. Joseph  
-A. S. Abraham  
+A. S. Abraham
 
-館報申 Shun-pau-kwan  
-SHUN-PAU (Chinese Daily News), 14, Han-kow Road  
-Major Bros., Limited, proprietors  
-H. A. Pereira, manager  
-Tsien Hing-peh, editor  
-Ho Kuei-seng, do.  
-Wong Sa-chü, do.  
-Tsien Ming-liao, do.  
+UNIT:
+館報申 Shun-pau-kwan
 
+SHUN-PAU (Chinese Daily News), 14, Han-kow Road
+
+Major Bros., Limited, proprietors
+H. A. Pereira, manager
+
+Tsien Hing-peh, editor
+Ho Kuei-seng, do.
+Wong Sa-chü, do.
+Tsien Ming-liao, do.
+
+UNIT:
 昌勝 Tsi-tsang  
-SIEBER & Co., Merchants, 6, Hankow Road  
-U. Girard  
-G. Lajeat  
 
+SIEBER & Co., Merchants, 6, Hankow Road  
+
+U. Girard  
+G. Lajeat
+
+UNIT:
 臣福 Zay-süng  
+
 SCHMISSEN & Co., Merchants, The Bund  
+
 Woldemar Nissen (Hamburg)  
 H. Hoppius (Hongkong)  
-A. Gultzow (Hamburg)N. A. Siebs  
+A. Gultzow (Hamburg)  
+N. A. Siebs  
 A. Wasserfall, signs per pro.  
 C. Flothow  
 J. Rief  
@@ -64,6 +85,7 @@ C. R. Heinsen
 Otto Homberg  
 
 Agencies  
+
 Deutsche Dampfschiffs Rhederei  
 Samarang Sea and Fire Insurance Co.  
 Globe Marine Insurance Company, Ltd.  
@@ -84,31 +106,45 @@ Norddeutsche Vers. Ges., Hamburg
 Münchener Rückversicherungs Ges.  
 International Lloyd, Berlin  
 Badische Schifffahrts Assecuranz Ges.  
-Associated Assurance Co.'s L'dn., Marine  
+Associated Assurance Co.'s L'dn., Marine
 
-豐森 Tah-fung.  
-SILAS, D. H., Merchant and Commission Agent, 34, Szechuen Road  
+UNIT:
+豐素 Tah-fung.
 
-福天 Tien-foo  
-SLEVOGT & Co., Merchants, 45, Szechuen Road  
-Max. Slevogt  
-H. Beck  
-M. Hoarter  
-F. do Rozario  
+SILAS, D. H., Merchant and Commission Agent, 34, Szechuen Road
 
-生醫羅賜 Sz-loo E-sang.  
-SLOAN, ROBERT J., M.D., Peking Road  
+UNIT:
+福天 Tien-foo
 
+SLEVOGT & Co., Merchants, 45, Szechuen Road
+Max. Slevogt
+H. Beck
+M. Hoarter
+F. do Rozario
+
+UNIT:
+生醫羅賜 Sz-loo E-sang.
+
+SLOAN, ROBERT J., M.D., Peking Road
+
+UNIT:
 審司照 Se-se-me  
-SMIDT, C., Commission Agent and Storekeeper, 37, Nanking Road  
 
+SMIDT, C., Commission Agent and Storekeeper, 37, Nanking Road
+
+UNIT:
 和廣老 Lao-kwang-ho  
+
 SMITH, GEO., Wine and Spirit Merchant, 8, Kiukiang Road  
+
 Geo. Smith  
-M. F. de Souza  
 
-福祥 Siang-fuh.  
-SNETHLAGE, H., Merchant and Commission Agent, 22, The Bund  
+M. F. de Souza
 
-SOCIETY OF ST. VINCENT DE PAUL, (Conference of St. Joseph) 16, Nansing Road  
-Hon. Treasurer—J. Peres da Silva
+UNIT:
+福祥 Siang-fuh.
+
+SNETHLAGE, H., Merchant and Commission Agent, 22, The Bund.
+
+SOCIETY OF ST. VINCENT DE PAUL, (Conference of St. Joseph) 16, Nansing Road. Hon. Treasurer—J. Peres da Silva.
+
